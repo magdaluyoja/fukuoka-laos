@@ -1,0 +1,26 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Content extends Model
+{
+    use SoftDeletes;
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+    protected $dates = ['deleted_at'];
+
+    protected $fillable = [
+        'title','content_type','date','created_at','updated_at','deleted_at'
+    ];
+
+    public function attachments()
+    {
+        return $this->hasMany('App\Attachment');
+    }
+}
