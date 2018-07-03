@@ -32,7 +32,7 @@
 	        <div class="col-md-12">
 	        	@include('admin.partials._messages')
 	            <div class="card">
-	                <form class="form-horizontal" action="{{route('contents.update', $content->id)}}" method="POST" id="frm-new-content" enctype="multipart/form-data" data-parsley-validate>
+	                <form class="form-horizontal" action="{{route('contents.update', $content->id)}}" method="POST" id="frm-new-content" enctype="multipart/form-data" data-parsley-validate autocomplete="off">
 	                	{{ csrf_field() }}
 	                	<input type="hidden" name="_method" value="PUT">
 	                    <div class="card-body wizard-content">
@@ -40,19 +40,19 @@
 	                        <div class="form-group row">
 	                            <label for="date" class="col-sm-2 control-label col-form-label">投稿日 *</label>
 	                            <div class="col-sm-10">
-	                                <input  type="text" class="form-control datepicker-autoclose" name="date" id="date" placeholder="投稿日 yyyy-mm-dd" value="{{$content->date}}">
+	                                <input  type="text" class="form-control datepicker-autoclose" name="date" id="date" placeholder="投稿日 yyyy-mm-dd" value="{{$content->date}}" data-parsley-required>
 	                            </div>
 	                        </div>
 	                        <div class="form-group row">
 	                            <label for="title" class="col-sm-2 control-label col-form-label">タイトル *</label>
 	                            <div class="col-sm-10">
-	                                <input  type="text" class="form-control" id="title" name="title" value="{{$content->title}}" placeholder="タイトル">
+	                                <input  type="text" class="form-control" id="title" name="title" value="{{$content->title}}" placeholder="タイトル" data-parsley-required>
 	                            </div>
 	                        </div>
 	                        <div class="form-group row">
 	                            <label for="content-type" class="col-sm-2 control-label col-form-label">リンク先 *</label>
 	                            <div class="col-sm-10">
-	                                <select class="form-control required" id="content-type" name="content_type">
+	                                <select class="form-control required" id="content-type" name="content_type" data-parsley-required>
 	                                    <option value="">--リンク先--</option>
 	                                    <option value="plan" {!! ($content->content_type === "plan") ? "selected" : "" !!}>事業計画</option>
 	                                    <option value="report" {!! ($content->content_type === "report") ? "selected" : "" !!}>事業報告</option>

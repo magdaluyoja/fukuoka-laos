@@ -144,5 +144,11 @@ return [
         'date'          => '投稿日',
         'title'         => 'タイトル',
         'content_type'  => 'リンク先',
+        "company_name"  =>  "会社名",
+        "name"          =>  "氏　名",
+        "zip_code"      =>  "郵便番号",
+        "address"       =>  "住　所",
+        "telephone"     =>  "TEL",
+        "email"         =>  "メールアドレス",
     ]
 ];

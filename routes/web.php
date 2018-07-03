@@ -20,6 +20,7 @@ Route::get('/business-reports', 'PageController@getBusinessReports');
 Route::get('/news', 'PageController@getNews');
 Route::get('/contact-us', 'PageController@getContactUs');
 
+Route::post('/contact-us/submit', 'PageController@sendInquiry')->name('contact_us');
 
 Route::get('/business-plan/details/{id}', 'PageController@getBusinessPlansDetails')->name('business_plan_details');
 Route::get('/business-report/details/{id}', 'PageController@getBusinessReportsDetails')->name('business_report_details');

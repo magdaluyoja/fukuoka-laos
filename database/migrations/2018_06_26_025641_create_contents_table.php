@@ -17,13 +17,13 @@ class CreateContentsTable extends Migration
             $table->engine = 'InnoDB';
             $table->charset = 'utf8';
             $table->collation = 'utf8_general_ci';
-            
             $table->increments('id');
-            $table->string('name', 225);
+            $table->string('title', 225);
+            $table->longText('contents');
             $table->enum('content_type', ['plan', 'report', 'news']);
             $table->date('date');
-            $table->boolean('deleted');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

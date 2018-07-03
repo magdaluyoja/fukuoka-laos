@@ -1,7 +1,7 @@
 <nav id="mainNav">
 	<div class="inner">
 		<a class="menu" id="menu"><span>MENU</span></a>
-		<div class="panel" style="display: none;">
+		<div class="topnav" style="display: none;">
 			<ul>
 				<li class="{{ Request::is('/') ? 'current-menu-item' : '' }}"><a href="/"><strong>トップページ</strong><span>Top</span></a></li>
 				<li class=" {{ Request::is('greetings-and-overview') ? 'current-menu-item' : '' }}

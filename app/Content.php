@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Content extends Model
 {
     use SoftDeletes;
+    // public $table = "content";
 	/**
 	 * The attributes that are mass assignable.
 	 *

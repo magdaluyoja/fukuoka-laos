@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Content;
-use App\Attachment;
 
 class PageController extends Controller
 {
@@ -143,5 +142,16 @@ class PageController extends Controller
                     ->get();
         $content = Content::find($id);
         return view("pages.news-details")->with("content", $content)->with("contents",$contents);
+    }
+
+    public function sendInquiry(Request $request){
+        $this->validate($request, array(
+            "company_name"=>"required",
+            "name"=>"required",
+            "zip_code"=>"required",
+            "address"=>"required",
+            "telephone"=>"required",
+            "email"=>"required",
+        ));
     }
 }
